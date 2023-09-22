@@ -76,7 +76,6 @@ int change_directory(info_t *info)
 	}
 	return (0);
 }
-
 /**
  * my_help - changes the current directory of the process
  * @info: Structure containing potential arguments. Used to maintain
