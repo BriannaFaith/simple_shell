@@ -19,7 +19,7 @@ void set_info(info_t *info, char **av)
 {
 	int i = 0;
 
-	info->fname = av[0];
+	info->filename = av[0];
 	if (info->arg)
 	{
 		info->argv = strtow(info->arg, " \t");
@@ -64,7 +64,7 @@ void free_info(info_t *info, int all)
 			info->environ = NULL;
 		bfree((void **)info->cmd_buf);
 		if (info->readfd > 2)
-			close(info->readfd);
+			pclose(info->readfd);
 		_putchar(BUF_FLUSH);
 	}
 }

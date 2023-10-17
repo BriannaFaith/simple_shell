@@ -46,7 +46,7 @@ int write_history(info_t *info)
 		_putfd('\n', fd);
 	}
 	_putfd(BUF_FLUSH, fd);
-	close(fd);
+	pclose(fd);
 	return (1);
 }
 /**
@@ -75,7 +75,7 @@ int read_history(info_t *info)
 	buf = malloc(sizeof(char) * (fsize + 1));
 	if (!buf)
 		return (0);
-	rdlen = read(fd, buf, fsize);
+	rdlen = fread(fd, buf, fsize);
 	buf[fsize] = 0;
 	if (rdlen <= 0)
 		return (free(buf), 0);

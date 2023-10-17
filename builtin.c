@@ -1,4 +1,4 @@
-c#include "shell.h"
+#include "shell.h"
 /**
  * exit_shell - exits the shell
  * @info: Structure containing potential arguments. Used to maintain
