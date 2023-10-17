@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
@@ -74,6 +75,7 @@ typedef struct passinfo
 	int argc;
 	int linecount_flag;
 	int env_changed;
+	int status;
 	list_t *env;
 	list_t *history;
 	list_t *alias;
@@ -98,13 +100,6 @@ typedef struct builtin
 	char*type;
 	int (*func)(info_t *);
 }builtin_table;
-
-typedef struct passinfo
-{
-    // ... other members
-    int status; // Add the status member
-    // ... other members
-} info_t;
 
 /* toem_parser.c */
 int is_cmd(info_t *, char *);
