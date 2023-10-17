@@ -74,7 +74,7 @@ int _putchar(char c)
 
 	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
-		fwrite(1, buf, i);
+		write(1, buf, i);
 		i = 0;
 	}
 	if (c != BUF_FLUSH)

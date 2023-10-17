@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <unistd.h>
 /**
  * get_history_file - gets the history file
  * @info: the parameter struct
@@ -75,7 +76,7 @@ int read_history(info_t *info)
 	buf = malloc(sizeof(char) * (fsize + 1));
 	if (!buf)
 		return (0);
-	rdlen = fread(fd, buf, fsize);
+	rdlen = read(fd, buf, fsize);
 	buf[fsize] = 0;
 	if (rdlen <= 0)
 		return (free(buf), 0);
