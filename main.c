@@ -1,6 +1,7 @@
 #include "shell.h"
 
-#define INFO_INIT { .arg = NULL, .argv = NULL, .path = NULL, .argc = 0, .env = NULL, .history = NULL, .alias = NULL, .environ = NULL, .cmd_buf = NULL, .cmd_bufsize = 0, .cmd_bufindex = 0, .linecount_flag = 1, .env_changed = 0, .status = 0, .err_num = 0, .readfd = STDIN_FILENO, .writefd = STDOUT_FILENO }
+#define INFO_INIT { NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 1, 0, 0, 0, STDIN_FILENO, STDOUT_FILENO }
+
 /**
  * main- the entry point
  * @ac: argument count
