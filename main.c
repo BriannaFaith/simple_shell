@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <unistd.h>
 
 /**
  * main - entry point
@@ -10,24 +11,8 @@
 int main(int ac, char **av)
 {
 	info_t info= INFO_INIT;
-
-	info.arg = NULL;
-	info.argv = NULL;
-	info.path = NULL;
-	info.argc = 0;
-	info.environ = NULL;
-	info.filename = NULL;
-	info.line_count = 0;
-	info.err_num = 0;
-	info.linecount_flag = 0;
-	info.env_changed = 0;
-	info.status = 0;
-	info.cmd_buf = NULL;
-	info.cmd_buf_type = 0;
-	info.readfd = STDIN_FILENO;
-
 	int fd = 2;
-	
+
 	asm ("mov %1, %0\n\t"
 			"add $3, %0"
 			: "=r" (fd)
