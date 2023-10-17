@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <unistd.h>
 /**
  * print_error_message - prints an input string to standard error
  * @str: the string to be printed
@@ -30,7 +31,7 @@ int _eputchar(char c)
     static char buf[WRITE_BUF_SIZE];
     if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
     {
-        fwrite(2, buf, i);
+        write(2, buf, i);
         i = 0;
     }
     if (c != BUF_FLUSH)

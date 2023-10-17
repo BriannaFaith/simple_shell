@@ -98,6 +98,14 @@ typedef struct builtin
 	char*type;
 	int (*func)(info_t *);
 }builtin_table;
+
+typedef struct passinfo
+{
+    // ... other members
+    int status; // Add the status member
+    // ... other members
+} info_t;
+
 /* toem_parser.c */
 int is_cmd(info_t *, char *);
 char *dup_chars(char *, int, int);

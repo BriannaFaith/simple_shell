@@ -63,11 +63,12 @@ int set_alias(info_t *info, char *str)
 int print_alias(list_t *node)
 {
 	char *equals = NULL, *alias = NULL;
+    char *p = NULL;
 
 	if (node)
 	{
 		p = _strchr(node->str, '=');
-		for (alias = node->str; alias <= equals; alias++)
+		for (alias = node->str; alias <= p; alias++)
 		_putchar(*alias);
 		_putchar('\'');
 		_puts(equals + 1);

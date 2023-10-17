@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <unistd.h>
 /**
  * is_chain - test if current char in buffer is a chain delimeter
  * @info: parameter struct
