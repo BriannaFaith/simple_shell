@@ -1,17 +1,17 @@
 #include "shell.h"
 
+#define INFO_INIT { .arg = NULL, .argv = NULL, .path = NULL, .argc = 0, .env = NULL, .history = NULL, .alias = NULL, .environ = NULL, .cmd_buf = NULL, .cmd_bufsize = 0, .cmd_bufindex = 0, .linecount_flag = 1, .env_changed = 0, .status = 0, .err_num = 0, .readfd = STDIN_FILENO, .writefd = STDOUT_FILENO }
 /**
- * main - Entry point of the shell program.
- * @ac: Argument count.
- * @av: Argument vector.
- *
- * Return: 0 on success, 1 on error.
- */
-int main(int ac, char **av)
-{
-    info_t info[] = { INFO_INIT }
-    int custom_fd = 2;
+ * main- the entry point
+ * @ac: argument count
+ * @av: argument vector
+ * Return: 0 on success, 1 on error
+*/
 
+int main (int ac, char **av)
+{
+    info_t info = INFO_INIT;
+    int custom_fd = 2;
 
     asm ("mov %1, %0\n\t"
          "add $3, %0"
@@ -22,8 +22,8 @@ int main(int ac, char **av)
     {
         custom_fd = open(av[1], O_RDONLY);
         if (custom_fd == -1)
-	{
-		if (errno == EACCES)
+        {
+            if (errno == EACCES)
                 exit(126);
             if (errno == ENOENT)
             {
