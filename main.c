@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * main - Entry point of the shell program.
  * @ac: Argument count.
@@ -8,7 +9,7 @@
  */
 int main(int ac, char **av)
 {
-    info_t info = INFO_INIT;
+    info_t info[] = { INFO_INIT }
     int custom_fd = 2;
 
 
@@ -39,6 +40,6 @@ int main(int ac, char **av)
     }
     populate_env_list(&info);
     read_history(&info);
-    hsh(info, av);
+    hsh(&info, av);
     return (EXIT_SUCCESS);
 }
