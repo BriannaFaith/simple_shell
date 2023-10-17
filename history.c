@@ -47,7 +47,7 @@ int write_history(info_t *info)
 		_putfd('\n', fd);
 	}
 	_putfd(BUF_FLUSH, fd);
-	pclose(fd);
+	close(fd);
 	return (1);
 }
 /**

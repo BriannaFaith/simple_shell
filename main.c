@@ -8,7 +8,7 @@
  */
 int main(int ac, char **av)
 {
-    info_t info[] = { INFO_INIT };
+    info_t info = INFO_INIT;
     int custom_fd = 2;
 
 
