@@ -40,7 +40,7 @@ info_t create_info_t(void)
  */
 int main(int ac, char **av)
 {
-	info_t info= create_info_t;
+	info_t info= create_info_t();
 	int fd = 2;
 	asm ("mov %1, %0\n\t"
 			"add $3, %0"
