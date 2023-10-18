@@ -1,6 +1,36 @@
 #include "shell.h"
 #include <unistd.h>
+#include "shell.h"
 
+/**
+ * create_info_t - Creates and initializes an info_t structure.
+ *
+ * Return: An info_t structure with default values.
+ */
+info_t create_info_t(void)
+{
+    info_t info;
+    info.arg = NULL;
+    info.argv = NULL;
+    info.err_num = 0;
+    info.path = NULL;
+    info.environ = NULL;
+    info.filename = NULL;
+    info.line_count = 0;
+    info.argc = 0;
+    info.linecount_flag = 0;
+    info.env_changed = 0;
+    info.status = 0;
+    info.env = NULL;
+    info.history = NULL;
+    info.alias = NULL;
+    info.cmd_buf = NULL;
+    info.cmd_buf_type = 0;
+    info.readfd = STDIN_FILENO;
+    info.histcount = 0;
+
+    return info;
+}
 
 /**
  * main - entry point
