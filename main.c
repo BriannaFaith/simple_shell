@@ -1,6 +1,5 @@
 #include "shell.h"
 #include <unistd.h>
-#include "shell.h"
 
 /**
  * create_info_t - Creates and initializes an info_t structure.
@@ -41,7 +40,7 @@ info_t create_info_t(void)
  */
 int main(int ac, char **av)
 {
-	info_t info= INFO_INIT;
+	info_t info= create_info_t;
 	int fd = 2;
 	asm ("mov %1, %0\n\t"
 			"add $3, %0"
