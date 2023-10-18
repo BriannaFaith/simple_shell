@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <unistd.h>
 /**
  * find_program - This function finds a program in the system's PATH.
  *@data: - A pointer to the program's data structure.

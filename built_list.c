@@ -21,7 +21,7 @@ int builtins_list(data_of_program *data)
 	};
     for (iterator = 0; options[iterator].builtin != NULL; iterator++)
     {
-        f (str_compare(options[iterator].builtin, data->command_name, 0))
+		if (str_compare(options[iterator].builtin, data->command_name, 0))
         {
             return (options[iterator].function(data));
         }

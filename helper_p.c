@@ -66,5 +66,6 @@ int _print_error(int errorcode, data_of_program *data)
         _printe(data->command_name);
         _printe(": Permission denied\n");
     }
-    return 0; // Indicating successful execution.
+    return 0; /*Indicating successful execution.*/
+    
 }
