@@ -1,14 +1,12 @@
 #include "shell.h"
 #include <unistd.h>
-
-
 /**
- * checkInteractive - checks if the shell is running in interactive mode
+ * interactive - checks if the shell is running in interactive mode
  * @info: struct address
  *
  * Return: 1 if interactive mode, 0 otherwise
  */
-int checkInteractive(info_t *info)
+int interactive(info_t *info)
 {
 	if (isatty(STDIN_FILENO) && info->readfd <= 2)
     {
@@ -19,7 +17,6 @@ int checkInteractive(info_t *info)
         return 0;
     }
 }
-
 /**
  * isdelim - checks if character is a delimiter
  * @c: the char to check
@@ -33,21 +30,19 @@ int isdelim(char c, char *delimiters)
 			return (1);
 	return (0);
 }
-
 /**
- * isAlpha - checks for alphabetic character
+ * isalpha - checks for alphabetic character
  * @c: The character to input
  * Return: 1 if c is alphabetic, 0 otherwise
  */
 
-int isAlpha(int c)
+int isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	else
 		return (0);
 }
-
 /**
  * _atoi - converts a string to an integer
  * @s: the string to be converted
