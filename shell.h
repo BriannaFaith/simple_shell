@@ -69,7 +69,7 @@ void sisifo(char *prompt, data_of_program *data);
 void handle_ctrl_c(int opr UNUSED);
 
 
-/*========  get_Line.c  ========*/
+/*========  _getline.c  ========*/
 
 /* Read one line of the standar input*/
 int _getline(data_of_program *data);
@@ -78,7 +78,7 @@ int _getline(data_of_program *data);
 int check_logic_ops(char *array_commands[], int i, char array_operators[]);
 
 
-/*======== expand.c ========*/
+/*======== expansions.c ========*/
 
 /* expand variables */
 void expand_variables(data_of_program *data);
@@ -90,7 +90,7 @@ void expand_alias(data_of_program *data);
 int buffer_add(char *buffer, char *str_to_add);
 
 
-/*======== token.c ========*/
+/*======== str_tok.c ========*/
 
 /* Separate the string in tokens using a designed delimiter */
 void tokenize(data_of_program *data);
@@ -105,13 +105,13 @@ char *_strtok(char *line, char *delim);
 int execute(data_of_program *data);
 
 
-/*======== built_list.c ========*/
+/*======== builtins_list.c ========*/
 
 /* If match a builtin, executes it */
 int builtins_list(data_of_program *data);
 
 
-/*======== path.c ========*/
+/*======== find_in_path.c ========*/
 
 /* Creates an array of the path directories */
 char **tokenize_path(data_of_program *data);
@@ -138,7 +138,7 @@ void free_all_data(data_of_program *data);
 /************** BUILTINS **************/
 
 
-/*======== built_more.c ========*/
+/*======== builtins_more.c ========*/
 
 /* Close the shell */
 int builtin_exit(data_of_program *data);
@@ -156,7 +156,7 @@ int builtin_help(data_of_program *data);
 int builtin_alias(data_of_program *data);
 
 
-/*======== built_env.c ========*/
+/*======== builtins_env.c ========*/
 
 /* Shows the environment where the shell runs */
 int builtin_env(data_of_program *data);
@@ -171,7 +171,7 @@ int builtin_unset_env(data_of_program *data);
 /************** HELPERS FOR ENVIRONMENT VARIABLES MANAGEMENT **************/
 
 
-/*======== environment.c ========*/
+/*======== env_management.c ========*/
 
 /* Gets the value of an environment variable */
 char *env_get_key(char *name, data_of_program *data);
@@ -189,7 +189,7 @@ void print_environ(data_of_program *data);
 /************** HELPERS FOR PRINTING **************/
 
 
-/*======== helpers.c ========*/
+/*======== helpers_print.c ========*/
 
 /* Prints a string in the standar output */
 int _print(char *string);
@@ -204,7 +204,7 @@ int _print_error(int errorcode, data_of_program *data);
 /************** HELPERS FOR STRINGS MANAGEMENT **************/
 
 
-/*======== helpers_s.c ========*/
+/*======== helpers_string.c ========*/
 
 /* Counts the number of characters of a string */
 int str_length(char *string);
@@ -222,7 +222,7 @@ char *str_concat(char *string1, char *string2);
 void str_reverse(char *string);
 
 
-/*======== helpers_n.c ========*/
+/*======== helpers_numbers.c ========*/
 
 /* Cast from int to string */
 void long_to_string(long number, char *string, int base);
@@ -234,7 +234,7 @@ int _atoi(char *s);
 int count_characters(char *string, char *character);
 
 
-/*======== alias.c ========*/
+/*======== alias_management.c ========*/
 
 /* print the list of alias */
 int print_alias(data_of_program *data, char *alias);
