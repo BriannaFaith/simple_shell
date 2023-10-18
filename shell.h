@@ -86,7 +86,7 @@ typedef struct passinfo
 	int histcount;
 } info_t;
 #define INFO_INIT \
-    (info_t) { NULL, NULL, NULL, 0, 0, NULL, 0, 0, NULL, NULL, NULL, 0, 0, 0, STDIN_FILENO, STDOUT_FILENO }
+    (info_t) { NULL, NULL, NULL, 0, 0, NULL, 0, 0, NULL, NULL, NULL, 0, 0, STDIN_FILENO, STDOUT_FILENO, 0, NULL }
 
 /**
  * struct builtin - contains a builtin string and related function
