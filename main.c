@@ -1,6 +1,4 @@
 #include "shell.h"
-#include <unistd.h>
-
 /**
  * main - entry point
  * @argc: argument count

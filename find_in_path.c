@@ -15,8 +15,9 @@ int find_program(data_of_program *data)
 
 	/**if is a full_path or an executable in the same path */
 	if (data->command_name[0] == '/' || data->command_name[0] == '.')
+	{
 		return (check_file(data->command_name));
-
+	}
 	free(data->tokens[0]);
 	data->tokens[0] = str_concat(str_duplicate("/"), data->command_name);
 	if (!data->tokens[0])
