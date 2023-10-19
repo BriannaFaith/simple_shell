@@ -86,7 +86,7 @@ int set_work_directory(data_of_program *data, char *new_dir)
 	return (0);
 }
 /**
- * builtin_help - Displays information about the shell environment.
+ * builtin_help - this function displays information about the shell environment.
  * @data: Pointer to the program's data structure.
  * Return: 0 on success, or an alternative number if specified in the arguments.
 */
@@ -129,7 +129,6 @@ int builtin_help(data_of_program *data)
 	perror(data->command_name);
 	return (0);
 }
-
 /**
  * builtin_alias - this function adds, remove or show aliases
  * @data:  A struct for the program's data
