@@ -1,11 +1,11 @@
 #include "shell.h"
+
 /**
- * builtins_list - Searches for a match and execute the associate builtin
- * @data: A struct for the program's data
+ * builtins_list - search for match and execute the associate builtin
+ * @data: struct for the program's data
  * Return: Returns the return of the function executed is there is a match,
  * otherwise returns -1.
  **/
-
 int builtins_list(data_of_program *data)
 {
 	int iterator;
@@ -19,6 +19,7 @@ int builtins_list(data_of_program *data)
 		{"unsetenv", builtin_unset_env},
 		{NULL, NULL}
 	};
+
 /*walk through the structure*/
 	for (iterator = 0; options[iterator].builtin != NULL; iterator++)
 	{
