@@ -4,6 +4,7 @@
  * @string: pointer to string.
  * Return: length of string.
  */
+
 int str_length(char *string)
 {
 	int length = 0;
