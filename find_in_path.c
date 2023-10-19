@@ -1,5 +1,28 @@
 #include "shell.h"
-#include <unistd.h>
+/**
+ * check_file - checks if exists a file, if it is not a dairectory and
+ * if it has excecution permisions for permisions.
+ * @full_path: pointer to the full file name
+ * Return: 0 on success, or error code if it exists.
+ */
+int check_file(char *full_path)
+{
+	struct stat sb;
+
+	if (stat(full_path, &sb) != -1)
+	{
+		if (S_ISDIR(sb.st_mode) ||  access(full_path, X_OK))
+		{
+			errno = 126;
+			return (126);
+		}
+		return (0);
+	}
+	/*if not exist the file*/
+	errno = 127;
+	return (127);
+}
+
 /**
  * find_program - This function finds a program in the system's PATH.
  *@data: - A pointer to the program's data structure.
@@ -90,27 +113,4 @@ char **tokenize_path(data_of_program *data)
 	PATH = NULL;
 	return (tokens);
 
-}
-/**
- * check_file - checks if exists a file, if it is not a dairectory and
- * if it has excecution permisions for permisions.
- * @full_path: pointer to the full file name
- * Return: 0 on success, or error code if it exists.
- */
-int check_file(char *full_path)
-{
-	struct stat sb;
-
-	if (stat(full_path, &sb) != -1)
-	{
-		if (S_ISDIR(sb.st_mode) ||  access(full_path, X_OK))
-		{
-			errno = 126;
-			return (126);
-		}
-		return (0);
-	}
-	/*if not exist the file*/
-	errno = 127;
-	return (127);
 }
