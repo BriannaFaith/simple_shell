@@ -5,6 +5,7 @@
  * @data: struct of the program's data
  * Return: a pointer to the value of the variable or NULL if it doesn't exist
  */
+
 char *env_get_key(char *key, data_of_program *data)
 {
 	int i, key_length = 0;
@@ -27,6 +28,7 @@ char *env_get_key(char *key, data_of_program *data)
 	/* returns NULL if did not find it */
 	return (NULL);
 }
+
 /**
  * env_set_key - this function overwrites the value of the environment variable or creates a new one
  * @key: the name of the variable to set
@@ -105,7 +107,7 @@ int env_remove_key(char *key, data_of_program *data)
 	return (0);
 }
 /**
- * print_environ - prints the current environment
+ * print_environ - this function prints the current environment
  * @data: the structure for the program's data
  * Return: nothing
  */
