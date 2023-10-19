@@ -137,7 +137,6 @@ void free_all_data(data_of_program *data);
 
 /************** BUILTINS **************/
 
-
 /*======== builtins_more.c ========*/
 
 /* Close the shell */
@@ -233,17 +232,13 @@ int _atoi(char *s);
 /* count the coincidences of character in string */
 int count_characters(char *string, char *character);
 
-
 /*======== alias_management.c ========*/
-
 /* print the list of alias */
 int print_alias(data_of_program *data, char *alias);
 
 /* get the alias name */
 char *get_alias(data_of_program *data, char *alias);
-
 /* set the alias name */
 int set_alias(char *alias_string, data_of_program *data);
-
 
 #endif /* SHELL_H */
