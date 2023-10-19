@@ -139,6 +139,7 @@ void free_all_data(data_of_program *data);
 
 /*======== builtins_more.c ========*/
 
+
 /* Close the shell */
 int builtin_exit(data_of_program *data);
 
@@ -148,14 +149,8 @@ int builtin_cd(data_of_program *data);
 /* set the work directory */
 int set_work_directory(data_of_program *data, char *new_dir);
 
-/* builtins_more.c */
-
-int builtin_help(data_of_program *data)
-{
-    /* Implementation of the help function */
-    /* ... */
-    return 0;  /* Return success status, adjust as needed */
-}
+/* show help information */
+int builtin_help(data_of_program *data);
 
 /* set, unset and show alias */
 int builtin_alias(data_of_program *data);
