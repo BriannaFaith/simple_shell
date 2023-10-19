@@ -20,6 +20,7 @@ int builtins_list(data_of_program *data)
 		{NULL, NULL}
 	};
 
+
 /*walk through the structure*/
 	for (iterator = 0; options[iterator].builtin != NULL; iterator++)
 	{
